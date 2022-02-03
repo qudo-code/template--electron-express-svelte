@@ -1,0 +1,206 @@
+@use "sass:math";
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700&display=swap');
+// ---------------------------------
+//            Config
+// ---------------------------------
+// Used in utility builders and also sets body font size.
+$spacer: 18;
+
+// Used to build utility classes.
+$breakpoints: (
+  'sm': (
+    max-width: 576px,
+  ),
+  'md': (
+    min-width: 768px,
+  ),
+  'lg': (
+    min-width: 992px,
+  ),
+);
+
+// Colors
+:root {
+    --color-light: rgb(255, 255, 255);
+
+    --color-dark-gray: rgb(.4, .4, .4);
+    --color-gray: #181818;
+    --color-light-gray: #6b6b6b;
+
+    --color-gold: #FFC700;
+    --color-green: #02D980;
+    --color-purple: #9945ff;
+    --color-discord-purple: #6828ffd7;
+    --color-blue: #228fd8;
+
+    // Most body text
+    --color-text-primary: var(--color-light-gray);
+
+    // Headers and input fields
+    --color-text-light: #e3e3e3;
+
+    // Body background
+    --color-background: var(--color-dark-gray);
+
+    // Kind of a wild gradient, use at your own risk.
+    --color-gradient: linear-gradient(to right, var(--color-pink),var(--color-purple), var(--color-green));
+}
+
+// Text
+:root {
+    --base-font-size: #{$spacer}px;
+    --font-family:  'Inconsolata', monospace;
+    --font-light: 200;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-bold: 700;
+
+    // Headers
+    --h1-sm: 4rem;
+    --h1-sm: 4rem;
+    --h2-sm: 2.5rem;
+    --h2-lg: 2.5rem;
+
+    // Border
+    --border-gray: solid 1px var(--color-light-gray);
+    --border-radius: 0.4rem;
+    --border-radius-less: 0.2rem;
+
+    // Sizes
+    --icon-large: 3rem;
+    --icon-medium: 1.5rem;
+    --icon-normal: 1rem;
+    --app-max-width: 65rem;
+
+    // Grid
+    --grid-gap: 1rem;
+
+    // Shadow
+    --box-shadow: -0.15rem -0.15rem 0.75rem 0.05rem rgb(0, 0, 0);
+
+    --selected-theme: var(--color-green);
+}
+
+::selection {
+    background: var(--selected-theme); /* WebKit/Blink Browsers */
+    color: var(--color-light);
+}
+::-moz-selection {
+    background: var(--selected-theme); /* Gecko Browsers */
+    color: var(--color-light);
+}
+
+// ---------------------------------
+//           Normalize
+// ---------------------------------
+* {
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body,
+html {
+    font-family: 'Inconsolata', monospace;
+    overflow-x: hidden;
+    font-size: var(--base-font-size);
+    background: var(--color-background);
+    color: var(--color-text-primary);
+    padding: 0;
+    margin: 0 auto;
+}
+
+main {
+    max-width: var(--app-max-width);
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+p {
+    margin: 0 0 0.5rem 0; 
+    line-height: 1.1rem;
+}
+
+p,
+a,
+li,
+button {
+    font-size: .9rem;
+    font-weight: var(--font-regular);
+    color: var(--color-text-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+input {
+    font-family: var(--font-family);
+    color: var(--color-light);
+}
+
+h2,
+h3,
+h4 {
+    font-weight: var(--font-medium);
+    margin: 0 0 0.25rem 0;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: var(--font-bold);
+    margin: 0 0 0.25rem 0;
+
+    @media screen and (max-width: 769px) {
+        font-size:4rem;
+    }
+}
+
+h2 {
+    font-size: 2.5rem;
+
+    @media screen and (max-width: 769px) {
+        font-size: 2.5remm;
+    }
+}
+
+h3 {
+    font-size: 1.75rem;
+
+    @media screen and (max-width: 769px) {
+        font-size: 1.25rem;
+    }
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+canvas {
+    display: block;
+    // vertical-align: bottom;
+}
+
+section {
+    position: relative;
+    z-index: 1;
+}
+
+// ---------------------------------
+//           Utilities
+// ---------------------------------
+@import "mixin.build-media-queries";
+@import "animations";
+@import "border";
+@import "background";
+@import "button";
+@import "display";
+@import "flex";
+@import "forms";
+@import "grid";
+@import "sizing";
+@import "text";
+@import "icon";
+@import "spacing";
+@import "opacity";
+@import "disable";
