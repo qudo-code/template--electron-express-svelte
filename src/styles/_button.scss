@@ -1,0 +1,119 @@
+.button {
+    border-radius: var(--border-radius);
+    background: var(--color-gray);
+    padding: 0.75rem;
+    appearance: none;
+    border-width: 0;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform ease-in-out 250ms, background ease-in-out 250ms, color ease-in-out 250ms;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-light);
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    span {
+        padding-left: 0.5rem;
+    }
+
+    svg path {
+        transition: fill ease-in-out 250ms;
+        fill: var(--color-light);
+    }
+}
+
+.tabs {
+    .button {
+        border-radius: 0;
+        padding: 0.5rem .75rem;
+
+        & + .button {
+            border-left: 0;
+        }
+
+        &:first-child {
+            border-top-left-radius: var(--border-radius);
+            border-bottom-left-radius: var(--border-radius);
+        }
+
+        &:last-child {
+            border-top-right-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+        }
+    }
+}
+
+.button-disabled {
+    pointer-events: none;
+    opacity: .5;
+}
+
+.button-outline {
+    border: 1px solid var(--color-gray);
+    background: transparent;
+    color: var(--);
+
+    svg path {
+        fill:  var(--color-text-primary);
+    }
+
+    &:hover {
+        opacity: 0.8;
+        color: var(--selected-theme);
+
+        path {
+            fill: var(--selected-theme);
+        }
+    }
+}
+
+.button-light {
+    background: var(--color-light);
+    color: var(--color-dark-gray);
+}
+
+.button-green {
+    color: var(--color-dark-gray);
+    background: var(--color-green);
+    border: 1px solid var(--color-green);
+
+    &:hover {
+        color: var(--color-dark-gray);
+    }
+}
+
+.button-blue {
+    color: var(--color-dark-gray);
+    background: var(--color-blue);
+    border: 1px solid var(--color-blue);
+
+    &:hover {
+        color: var(--color-dark-gray);
+    }
+}
+
+.button-theme {
+    color: var(--color-dark-gray);
+    background: var(--selected-theme);
+    border: 1px solid var(--selected-theme);
+
+    &:hover {
+        color: var(--color-dark-gray);
+    }
+}
+
+.button-outline-green {
+    border: 1px solid var(--color-green);
+    background: transparent;
+}
+
+.button-red {
+    border-color: var(--color-red);
+    color: var(--color-red);
+}

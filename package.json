@@ -1,0 +1,41 @@
+{
+  "name": "template--electron-express-svelte",
+  "version": "1.0.0",
+  "description": "Electron + Express + Svelte",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon --watch . -e js,svelte,scss --ignore ./ui/ --exec 'npm run build:ui && electron .'",
+    "build:ui": "vite build",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "build": "electron-builder --mac --win",
+    "build:system": "electron-builder"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "*",
+    "@tivac/eslint-config": "^2.4.0",
+    "cross-env": "^7.0.3",
+    "electron": "^16.0.0",
+    "electron-builder": "^22.13.1",
+    "electron-icon-builder": "^2.0.1",
+    "electron-packager": "^15.4.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "nodemon": "^2.0.15",
+    "sass": "^1.36.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-declaration-use-variable": "^1.7.2",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
+    "svelte-preprocess": "^4.7.4",
+    "vite": "^2.4.3"
+  },
+  "author": "qudo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
